@@ -1,12 +1,16 @@
 package car_showroom_client.org;
 
 import java.util.Scanner;
+
+import car_showroom_model.org.CarMasterModel;
 import car_showroom_model.org.LoginModel;
+import car_showroom_service.org.CarMasterService;
 import car_showroom_service.org.LoginService;
 
 public class CarShowroomClient {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		CarMasterService cMService= new CarMasterService();
 		LoginService lServices = new LoginService();
 		int choice = 0;
 		int choice2 = 0;
@@ -30,7 +34,7 @@ public class CarShowroomClient {
 					System.out.println("\n1. Showroom Login :) :)");
 					System.out.println("2. Serviceing Center Login :) :)");
 					System.out.println("3. sign-up :) :)");
-					System.out.println("4. Exit from Employee Login:) :)");
+					System.out.println("4. Exit from Employee Login :) :)");
 					System.out.println("Enter the choice");
 					choice2 = sc.nextInt();
 					sc.nextLine();
@@ -49,6 +53,43 @@ public class CarShowroomClient {
 						} else {
 							System.out.println("Not permitted to enter");
 						}
+						// showroom 
+						int choice3=0;
+						do {
+							System.out.println("1. Add Car Data");
+							System.out.println("4. Exit!!!");
+							System.out.println("Enter the Choice ");
+							choice3=sc.nextInt();
+							sc.nextLine();
+							switch(choice3)
+							{
+							case 1:
+								System.out.println("Enter the Car Name ");
+								String carName=sc.nextLine();
+								System.out.println("Enter the Car Price");
+								long carPrice=sc.nextInt();
+								System.out.println("Enter the number of Cars ");
+								int noOfCar=sc.nextInt();
+								sc.nextLine();
+								CarMasterModel cMModel= new CarMasterModel(carName,carPrice,noOfCar);
+								if(cMService.addCarData(cMModel))
+								{
+									System.out.println("Car is add succesfull:)");
+								}
+								else {
+									System.out.println("Car not added!!");
+								}
+								break;
+							case 2:
+								break;
+							case 3:
+								break;
+							case 4:
+								System.out.println("Exit From ShowRoom ");
+								break;
+							}
+						}while(choice3!=4);
+						// end Showroom 
 						break;
 					case 2:
 						System.out.println("Enter the Employee User Name ");
