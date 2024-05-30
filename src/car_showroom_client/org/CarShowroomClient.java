@@ -1,6 +1,7 @@
 package car_showroom_client.org;
 
-import java.util.Scanner;
+import java.util.*;
+
 import car_showroom_model.org.LoginModel;
 import car_showroom_service.org.LoginService;
 
