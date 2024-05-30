@@ -30,7 +30,7 @@ public class CarShowroomClient {
 					System.out.println("\n1. Showroom Login :) :)");
 					System.out.println("2. Serviceing Center Login :) :)");
 					System.out.println("3. sign-up :) :)");
-					System.out.println("4. Exit from Employee Login :)");
+					System.out.println("4. Exit from Employee Login :) :)");
 					System.out.println("Enter the choice");
 					choice2 = sc.nextInt();
 					sc.nextLine();
